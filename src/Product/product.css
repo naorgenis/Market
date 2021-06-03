@@ -1,0 +1,9 @@
+.card {
+  display: grid;
+  width: 18rem;
+  margin: 10px;
+}
+
+.image {
+  height: 15rem;
+}
