@@ -1,3 +1,9 @@
-.card {
-  margin: 10px 0px 0px 100px;
+.card.wishlist {
+  width: 20rem;
+  margin: 10% 10% 0% 10%;
+  height: 38px;
+}
+
+h4.card-title {
+  text-align: center;
 }

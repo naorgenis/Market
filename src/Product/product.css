@@ -1,9 +1,35 @@
 .card {
   display: grid;
-  width: 18rem;
-  margin: 10px;
+  grid-template-rows: repeat(10, 35px);
+  grid-template-columns: repeat(1, 1fr);
+  width: 11rem;
+  margin: 5px;
+}
+.image {
+  grid-row: 1 / span 4;
+  width: 7rem;
+  height: 7rem;
+  margin: 5px 30% 0 11%;
 }
 
-.image {
-  height: 15rem;
+.price {
+  grid-row: 5 / span 1;
+  text-align: center;
+}
+
+.title {
+  grid-row: 6 / span 3;
+
+  height: auto;
+}
+
+.card-body {
+  text-align: left;
+  bottom: 5px;
+  width: 10rem;
+}
+
+.addbtn {
+  margin: 10px;
+  bottom: 5px;
 }

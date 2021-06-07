@@ -1,7 +1,7 @@
 class httpService {
-  getData = async () => {
+  getData = async (query) => {
     const res = await fetch(
-      "https://walmart.p.rapidapi.com/products/list?cat_id=0&pref_store=2648%2C5434%2C2031%2C2280%2C5426&sort=best_seller&page=1&zipcode=94066",
+      `https://walmart.p.rapidapi.com/products/list?query=${query}`,
       {
         method: "GET",
         headers: {
