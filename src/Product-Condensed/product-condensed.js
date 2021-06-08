@@ -8,7 +8,7 @@ const productCondensed = ({ id, title, price, image, onDelete }) => {
           <a
             href="#"
             className="btn btn-outline-danger"
-            onClick={() => onDelete(id)}
+            onClick={(e) => onDelete(e, id)}
           >
             X
           </a>

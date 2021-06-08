@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import Navbar from "./navbar";
 import WishList from "./WishList/wishList";
 import ProductList from "./ProductList/product-list";
+import CarouselSlide from "./CarouselSlide/carousel-slide.js";
+import "./App.css";
 
 const App = () => {
   const [wishlist, setWishlist] = useState([]);
@@ -27,7 +28,8 @@ const App = () => {
     }
   };
 
-  const deleteFromWishList = (id) => {
+  const deleteFromWishList = (e, id) => {
+    e.preventDefault();
     const newWish = wishlist.filter((item) => item.id !== id);
     setWishlist(newWish);
     localStorage.setItem("wishlist", JSON.stringify(newWish));
@@ -44,22 +46,21 @@ const App = () => {
   };
 
   return (
-    <div className="App-main">
+    <div className="app-main">
       <Navbar
         search={search}
         getSearch={getSearch}
         updateSearch={updateSearch}
       />
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-sm-8">
-            <div className="row">
-              <ProductList addToWishList={addToWishList} query={query} />
-            </div>
+      <CarouselSlide />
+      <div className="row">
+        <div className="col-sm-8">
+          <div className="row">
+            <ProductList addToWishList={addToWishList} query={query} />
           </div>
-          <div className="col-sm-4">
-            <WishList wishlist={wishlist} onDelete={deleteFromWishList} />
-          </div>
+        </div>
+        <div className="col-sm-4">
+          <WishList wishlist={wishlist} onDelete={deleteFromWishList} />
         </div>
       </div>
     </div>

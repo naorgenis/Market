@@ -14,28 +14,23 @@ const Product = ({ id, title, image, description, price, addToWishList }) => {
     <div className="card">
       <img
         src={image}
-        className="card-img-top image"
+        style={{ cursor: "pointer" }}
+        className="card-img-top "
         alt={title}
         onClick={() => setProdRev(true)}
       />
-      <div className="card-body price">
-        <p className="card-title">Price: {price}$</p>
-      </div>
-      <div className="card-body title">
-        <h5
-          className="card-title"
-          dangerouslySetInnerHTML={{ __html: `${title.slice(0, 20)}...` }}
-        ></h5>
-      </div>
-      <div className="add-btn">
+      <div className="card-body">
+        <h5 className="card-title">{title}</h5>
+        <h6>Price: {price}$</h6>
         <a
-          href="#"
+          href="#!"
           className="btn btn-primary addbtn"
           onClick={() => addToWishList({ id, title, image, price })}
         >
           Add to cart
         </a>
       </div>
+
       {!prodRev ? null : (
         <ProductReview
           id={id}
@@ -44,6 +39,7 @@ const Product = ({ id, title, image, description, price, addToWishList }) => {
           description={description}
           price={price}
           changeProRev={changeProRev}
+          addToWishList={addToWishList}
         />
       )}
     </div>

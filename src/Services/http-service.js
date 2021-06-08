@@ -1,19 +1,19 @@
 class httpService {
-  getData = async (query) => {
+  getData = async (search) => {
     const res = await fetch(
-      `https://walmart.p.rapidapi.com/products/list?query=${query}`,
-      {
-        method: "GET",
-        headers: {
-          "x-rapidapi-key":
-            "ca7552b293msh7d2dee9298ea89ep1cd17bjsn25ca2d1c6a85",
-          "x-rapidapi-host": "walmart.p.rapidapi.com",
-        },
-      }
+      `https://react-market-proj-default-rtdb.firebaseio.com/market.json?`
     );
     const data = await res.json();
+    const dataArray = [];
+    for (const key in data) {
+      const item = {
+        id: key,
+        ...data[key],
+      };
+      dataArray.push(item);
+    }
     console.log(data);
-    return data;
+    return dataArray;
     //   .then((response) => {
     //     response.json().then((res) => {
     //       console.log(res);
