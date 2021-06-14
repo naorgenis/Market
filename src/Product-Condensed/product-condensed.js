@@ -4,7 +4,7 @@ const productCondensed = ({ id, title, price, image, onDelete }) => {
   return (
     <li className="list-group-item">
       <div className="row">
-        <div className="col-sm-4">
+        <div className="col-sm-3">
           <a
             href="#"
             className="btn btn-outline-danger"
@@ -13,12 +13,12 @@ const productCondensed = ({ id, title, price, image, onDelete }) => {
             X
           </a>
         </div>
-        <div className="col-sm-4">
-          <p>
+        <div className="col-sm-6 title">
+          <h6>
             {title.slice(0, 10)} | {price}$
-          </p>
+          </h6>
         </div>
-        <div className="col-sm-4">
+        <div className="col-sm-3 image">
           <img src={image} className="card-img-top image-wish" alt={title} />
         </div>
       </div>

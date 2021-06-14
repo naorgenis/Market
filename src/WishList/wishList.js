@@ -3,7 +3,7 @@ import ProductCondensed from "../Product-Condensed/product-condensed";
 
 const wishList = ({ wishlist, onDelete }) => {
   return (
-    <div className="card wishlist">
+    <div className="sticky">
       <div className="card-block">
         <h4 className="card-title">Wish List</h4>
         <ul className="list-group">

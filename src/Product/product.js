@@ -23,9 +23,9 @@ const Product = ({ id, title, image, description, price, addToWishList }) => {
         <h5 className="card-title">{title}</h5>
         <h6>Price: {price}$</h6>
         <a
-          href="#!"
+          href="#"
           className="btn btn-primary addbtn"
-          onClick={() => addToWishList({ id, title, image, price })}
+          onClick={(e) => addToWishList(e, id, title, image, price)}
         >
           Add to cart
         </a>

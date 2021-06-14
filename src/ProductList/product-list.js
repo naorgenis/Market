@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Prodcut from "../Product/product";
 import HttpService from "../Services/http-service";
 import "./product-list.css";
+import { FaCheckCircle } from "react-icons/fa";
 
 const ProductList = ({ addToWishList, query }) => {
   const http = new HttpService();
@@ -37,37 +38,47 @@ const ProductList = ({ addToWishList, query }) => {
   };
 
   return (
-    <div className="row product-list">
-      <div>
-        Sort:{" "}
-        <span style={{ cursor: "pointer" }} onClick={() => sortItem("title")}>
-          Name
-        </span>{" "}
-        |
-        <span style={{ cursor: "pointer" }} onClick={() => sortItem("price")}>
-          Price
-        </span>
-      </div>
-      {isLoading ? (
-        <div className="d-flex justify-content-center">
-          <div className="spinner-border" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
+    <>
+      <div className="row product-list">
+        <div className="sort">
+          Sort:{" "}
+          <span style={{ cursor: "pointer" }} onClick={() => sortItem("title")}>
+            Name{" "}
+          </span>
+          |{" "}
+          <span style={{ cursor: "pointer" }} onClick={() => sortItem("price")}>
+            Price
+          </span>
         </div>
-      ) : (
-        products.map((item) => (
-          <Prodcut
-            key={item.id}
-            id={item.id}
-            title={item.title}
-            image={item.image}
-            description={item.description}
-            price={item.price}
-            addToWishList={addToWishList}
+        {isLoading ? (
+          <div className="d-flex justify-content-center">
+            <div className="spinner-border" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        ) : (
+          <>
+            {products.map((item) => (
+              <Prodcut
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                image={item.image}
+                description={item.description}
+                price={item.price}
+                addToWishList={addToWishList}
+              />
+            ))}
+          </>
+        )}
+        <div className="popup">
+          <FaCheckCircle
+            style={{ color: "green", float: "left", fontSize: "20px" }}
           />
-        ))
-      )}
-    </div>
+          item added!
+        </div>
+      </div>
+    </>
   );
 };
 

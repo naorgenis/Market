@@ -1,0 +1,9 @@
+.carousel.slide {
+  padding-left: 4%;
+}
+
+img.d-block {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+}

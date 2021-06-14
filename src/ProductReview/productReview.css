@@ -10,18 +10,6 @@
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
-/* .pro-rev {
-  display: block;
-  z-index: 1;
-  position: static;
-  background-color: #fefefe;
-  margin: 10%;
-  border: 1px solid #888;
-  border-radius: 30px;
-  width: 60%;
-  height: 50%;
-} */
-
 .card.mb-3 {
   display: block;
   z-index: 1;
